@@ -1,15 +1,22 @@
 
-<html>
-<div id="app">
-  <p>{{ message }}</p>
-  <input v-model="message">
-</div>
+ <input type="text" id="title" value="Title">
+ <input type="text" id="color" value="Color">
+ <input type="text" id="duration" value="Duration">
+ <input type="text" id="type" value="Type">
+
+
+<button onclick="myFunction()">Generate</button>
+
+<div id="output"></div>
 <script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Joe'
-  }
-})</script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-</html>
+function myFunction() {
+  var x = document.getElementById("title").value;
+    var y = document.getElementById("color").value;
+  var z = document.getElementById("duration").value;
+    var ii = document.getElementById("type").value;
+
+const content = "https://giticlock.github.io/pro/"+ii+"?"+"title="+ x +"&theme="+y+"&duration="+z;
+  document.getElementById("output").innerHTML = `<a href="${content}">${content}</a>`;
+}
+</script>
+
